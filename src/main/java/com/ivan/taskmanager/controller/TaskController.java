@@ -4,6 +4,8 @@ import com.ivan.taskmanager.model.Task;
 import com.ivan.taskmanager.repository.TaskRepository;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/tasks")
 public class TaskController {
@@ -17,5 +19,10 @@ public class TaskController {
     @PostMapping
     public Task createTask(@RequestBody Task task) {
         return taskRepository.save(task);
+    }
+
+    @GetMapping
+    public List<Task> getAllTasks() {
+        return taskRepository.findAll();
     }
 }
