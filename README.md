@@ -1,26 +1,46 @@
 # Task Manager Backend
 
-Backend service for a simple task management application built with Spring Boot.
+Backend service for a task management application built with Spring Boot and PostgreSQL.
 
-This project is part of a learning project to build a full-stack task management system using modern backend technologies.
+This project is part of a learning journey focused on building real backend systems using modern technologies and a professional GitHub workflow.
 
 ---
 
-# Tech Stack
+## Project Description
+
+The application provides a REST API that allows users to manage tasks.  
+Currently the backend supports creating tasks and retrieving all stored tasks.
+
+The main goal of this project is to practice backend development concepts such as:
+
+- REST API design
+- Spring Boot application structure
+- Database integration using JPA
+- PostgreSQL setup
+- GitHub issue based development workflow
+
+Future improvements will include additional API endpoints, service layer architecture, validation and authentication.
+
+---
+
+## Tech Stack
 
 - Java
 - Spring Boot
+- Spring Data JPA
 - PostgreSQL
 - Maven
-- Git
+- Git / GitHub
 
 ---
 
-# Requirements
+## Installation and Setup
 
-The following tools must be installed locally:
+### Requirements
 
-- Java (JDK)
+The following tools must be installed:
+
+- Java (JDK 17 or higher)
 - PostgreSQL
 - Maven
 - Git
@@ -28,29 +48,22 @@ The following tools must be installed locally:
 
 ---
 
-# Database Setup
+### Database Setup
 
-The backend uses PostgreSQL as the database.
-
-A database and user were created for this project.
+Create a PostgreSQL database.
 
 Database name:
-
 taskmanager
 
-Database user:
-
+Database user: 
 taskuser
 
-To connect manually to the database using the terminal:
+
+Connect to the database:
 
 psql -U taskuser -d taskmanager -h localhost
 
-You will be asked for the database password.
-
----
-
-# Spring Boot Database Configuration
+### Spring Boot Configuration
 
 Database configuration is stored in:
 
@@ -66,95 +79,15 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
 
-Explanation:
+###  Running the Application
 
-spring.datasource.url – database location  
-spring.datasource.username – database user  
-spring.datasource.password – database password  
-spring.jpa.hibernate.ddl-auto=update – automatically updates database tables based on entities  
-spring.jpa.show-sql=true – prints SQL queries in the console
-
----
-
-# Running PostgreSQL
-
-If PostgreSQL is installed via Homebrew, start the service with:
-
+Start PostgreSQL (if installed via Homebrew):
 brew services start postgresql@17
 
-Check running services:
-
-brew services list
-
----
-
-# Run the Application
-
-You can run the application directly from IntelliJ IDEA.
-
-Or from the terminal using Maven:
-
+Run the Spring Boot application:
 ./mvnw spring-boot:run
 
-or
-
-mvn spring-boot:run
-
-The application will start on:
-
+The server will start at:
 http://localhost:8080
 
----
 
-# Project Structure
-
-The project follows a typical Spring Boot backend structure.
-
-src/main/java/com/ivan/taskmanager
-
-controller  
-service  
-repository  
-model  
-config
-
-These packages will contain:
-
-controller – REST API endpoints  
-service – business logic  
-repository – database access  
-model – entity classes  
-config – configuration classes
-
----
-
-# Development Notes
-
-Useful commands during development.
-
-Connect to the database:
-
-psql -U taskuser -d taskmanager -h localhost
-
-Start PostgreSQL:
-
-brew services start postgresql@17
-
-Check PostgreSQL status:
-
-brew services list
-
----
-
-# Current Status
-
-Project setup completed:
-
-- Spring Boot project created
-- PostgreSQL installed and configured
-- Database connection working
-- README documentation added
-
-Next step:
-
-Implement the first REST controller and create the first API endpoint.
